@@ -1,0 +1,44 @@
+name: 💡 Sugestão de Feature
+description: Tem uma ideia para melhorar o LootPulse? Manda ver.
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Adoraria ouvir suas ideias! Descreve bem o que você tem em mente.
+
+  - type: textarea
+    id: problema
+    attributes:
+      label: Qual problema isso resolve?
+      description: Conte o que te incomoda ou o que sente falta no mod atualmente.
+      placeholder: "Seria útil se eu pudesse configurar a tecla de scan para algo diferente de F..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solucao
+    attributes:
+      label: Como você imagina que funcionaria?
+      description: Descreva o comportamento desejado com o máximo de detalhe possível.
+      placeholder: "Uma config no arquivo .cfg chamada ScanKey que aceita qualquer tecla..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: impacto_multiplayer
+    attributes:
+      label: Impacto no multiplayer
+      description: A feature afeta apenas você ou todos os jogadores na sala?
+      options:
+        - Só local (client-side)
+        - Afeta toda a sala (requer que todos instalem)
+        - Não sei
+    validations:
+      required: true
+
+  - type: textarea
+    id: contexto_extra
+    attributes:
+      label: Contexto adicional
+      description: Exemplos, referências de outros mods, prints de como seria...

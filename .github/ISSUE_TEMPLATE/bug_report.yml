@@ -1,0 +1,78 @@
+name: 🐛 Bug Report
+description: Encontrou algo quebrado? Me conta aqui.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por reportar! Quanto mais detalhe, mais rápido consigo reproduzir e corrigir.
+
+  - type: input
+    id: versao_mod
+    attributes:
+      label: Versão do LootPulse
+      placeholder: "ex: 1.0.0"
+    validations:
+      required: true
+
+  - type: input
+    id: versao_jogo
+    attributes:
+      label: Versão do R.E.P.O.
+      description: Visível no canto inferior da tela principal do jogo.
+      placeholder: "ex: v0.4.3.2 / Build 23250495"
+    validations:
+      required: true
+
+  - type: textarea
+    id: o_que_aconteceu
+    attributes:
+      label: O que aconteceu?
+      description: Descreva o comportamento inesperado que você viu.
+      placeholder: "Quando pressiono F, os brackets aparecem mas os ícones do mapa não..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduzir
+    attributes:
+      label: Como reproduzir
+      description: Passo a passo para chegar ao bug.
+      placeholder: |
+        1. Iniciar partida solo
+        2. Entrar no nível X
+        3. Pressionar F
+        4. Ver que...
+    validations:
+      required: true
+
+  - type: textarea
+    id: log
+    attributes:
+      label: Log do BepInEx
+      description: Cole o conteúdo de `BepInEx/LogOutput.log`, especialmente as linhas com `[LootPulse]`, `[Error]` ou `[Warning]`.
+      render: text
+
+  - type: dropdown
+    id: multiplayer
+    attributes:
+      label: Modo de jogo
+      options:
+        - Solo
+        - Multiplayer (host)
+        - Multiplayer (cliente)
+    validations:
+      required: true
+
+  - type: textarea
+    id: outros_mods
+    attributes:
+      label: Outros mods ativos
+      description: Liste os mods que estavam ativos junto com o LootPulse.
+      placeholder: "HuntsmanLoot 1.1.2, BagExpander 1.0.2..."
+
+  - type: textarea
+    id: contexto_extra
+    attributes:
+      label: Contexto adicional
+      description: Print, GIF, qualquer coisa que ajude.
