@@ -1,0 +1,15 @@
+# Build outputs
+build/*.deps.json
+build/*.pdb
+src/obj/
+src/bin/
+.vs/
+
+# Zips de release (ficam localmente, não no repo)
+*.zip
+
+# Temporários
+*.user
+*.suo
+*.cache
+Thumbs.db
