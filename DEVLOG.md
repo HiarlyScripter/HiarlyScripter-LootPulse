@@ -1,5 +1,21 @@
 # DEVLOG — LootPulse
 
+## Backlog — Features para v1.0.1 ou v1.1.0
+
+> Registradas em 2026-05-24. Nenhuma implementada ainda — aguardando próximo ciclo.
+
+| # | Feature | Observação |
+|---|---|---|
+| 1 | **Filtro "somente não descobertos"** | Evita repulsar itens já marcados no mapa |
+| 2 | **Cor/efeito por valor do item** | Destaque diferente para itens mais valiosos — depende de API que exponha valor com segurança |
+| 3 | **Modo toggle (pulso automático)** | Tecla liga/desliga scan automático a cada X segundos, em vez de apertar F toda vez |
+| 4 | **Scan inteligente com limite máximo** | Evita marcar 80–100 itens de uma vez e poluir mapa/HUD |
+| 5 | **Som/feedback por resultado** | Feedback leve ao encontrar item; outro quando não encontra nada |
+| 6 | **Config `AddMapIconsOnlyOnce`** | Evita duplicação de ícones e reduz chamadas repetidas no mapa |
+| 7 | **Blacklist/whitelist por categoria** | Filtrar por valor mínimo ou tipo de valuable — depende de exposição pela API do jogo |
+
+---
+
 ## v1.0.0 — 2026-05-24 — Runtime Approved (stable)
 
 **Status:** `v1.0.0 stable runtime-approved`
