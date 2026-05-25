@@ -1,0 +1,241 @@
+[center][img]https://i.imgur.com/placeholder_banner.png[/img][/center]
+
+[center][b][size=5]🔍 LootPulse[/size][/b][/center]
+[center]Pressione [b]F[/b] para escanear todos os valuables no raio — brackets visuais e ícones no mapa, instantaneamente.[/center]
+
+[hr]
+
+[b][size=4]✨ O que faz[/size][/b]
+
+LootPulse é um scanner de valuables para R.E.P.O. Ao pressionar a tecla configurada, o mod localiza todos os objetos valiosos no raio definido, ativa o efeito visual de descoberta nativo do jogo (brackets amarelos) em cada um e os registra no mapa automaticamente.
+
+Nenhum item fica mais escondido.
+
+[hr]
+
+[b][size=4]📡 Funcionalidades[/size][/b]
+
+[list]
+[*][b]Scan por tecla[/b] — pressione F (configurável) para ativar o pulso imediatamente
+[*][b]Brackets visuais[/b] — ativa o efeito de descoberta nativo do jogo em cada valuable encontrado
+[*][b]Ícones no mapa[/b] — todos os valuables escaneados aparecem no mapa automaticamente
+[*][b]Raio configurável[/b] — ajuste o alcance de 5 a 200 metros
+[*][b]Cooldown configurável[/b] — evita spam de scan (0 a 60 segundos)
+[*][b]Resiliente a updates[/b] — APIs críticas resolvidas via reflexão; fallbacks automáticos se o jogo atualizar
+[*][b]Logs detalhados[/b] — sabe exatamente quantos itens foram encontrados e processados
+[/list]
+
+[hr]
+
+[b][size=4]👥 Multiplayer[/size][/b]
+
+[b]Cada jogador precisa instalar o mod[/b] para ver os efeitos na sua própria tela. O scan é processado localmente — cada cliente age de forma independente.
+
+[list]
+[*][b]Só o host tem o mod[/b] — apenas o host vê os brackets e o mapa; outros jogadores não veem nada
+[*][b]Todos têm o mod[/b] — cada jogador usa seu próprio scanner independentemente
+[*][b]Ninguém tem o mod[/b] — nenhuma alteração no jogo
+[/list]
+
+[hr]
+
+[b][size=4]⚙️ Configurações[/size][/b]
+
+Edite o arquivo [font=Courier New]BepInEx/config/com.hiarlyscripter.repo.lootpulse.cfg[/font] ou use o [b]REPOConfig[/b] dentro do jogo:
+
+[b]ScanKey[/b] [i](Seção: Scanner · padrão: F)[/i]
+Tecla que ativa o scanner. Suporta qualquer tecla do teclado.
+
+[b]ScanRange[/b] [i](Seção: Scanner · padrão: 30 · range: 5–200)[/i]
+Raio de detecção em metros. Use valores maiores para varrer a fase inteira.
+
+[b]CooldownSeconds[/b] [i](Seção: Scanner · padrão: 4 · range: 0–60)[/i]
+Segundos mínimos entre dois scans consecutivos. Zero desativa o cooldown.
+
+[b]EnableVisualBrackets[/b] [i](Seção: Scanner · padrão: true)[/i]
+Exibe os brackets visuais de descoberta nos valuables encontrados.
+
+[b]EnableMapIcons[/b] [i](Seção: Scanner · padrão: true)[/i]
+Adiciona ícones dos valuables ao mapa ao escanear.
+
+[b]RequireLevelOrRun[/b] [i](Seção: Scanner · padrão: true)[/i]
+Só permite scan durante runs ativas (nível gerado). Desative apenas para testes fora de um nível.
+
+[b]VerboseLogging[/b] [i](Seção: Scanner · padrão: false)[/i]
+Loga detalhes de cada item processado individualmente no BepInEx.LogOutput.log.
+
+[hr]
+
+[b][size=4]📦 Dependências[/size][/b]
+
+[b]Obrigatória[/b]
+[list]
+[*][b]BepInExPack 5.4.23.5[/b] — framework base para mods do R.E.P.O.
+[/list]
+
+[b]Opcional[/b]
+[list]
+[*][b]REPOConfig[/b] — permite editar as configurações dentro do próprio jogo, sem abrir arquivos
+[/list]
+
+Nenhuma outra dependência. O LootPulse usa apenas APIs nativas do jogo.
+
+[hr]
+
+[b][size=4]🛠️ Instalação[/size][/b]
+
+[b]Instalação manual (Vortex):[/b]
+[list]
+[*]Instale o [b]BepInExPack[/b] primeiro
+[*]Use o botão [b]Mod Manager Download[/b] no Nexus — o Vortex instala automaticamente na estrutura correta
+[*]Ou manualmente: extraia e copie a pasta [font=Courier New]BepInEx/[/font] para o diretório do jogo
+[/list]
+
+O arquivo de configuração será gerado automaticamente em [font=Courier New]BepInEx/config/com.hiarlyscripter.repo.lootpulse.cfg[/font] na primeira execução.
+
+[hr]
+
+[b][size=4]❓ Problemas comuns[/size][/b]
+
+[b]Pressiono F e nada acontece[/b]
+Confirme que o mod carregou abrindo [font=Courier New]BepInEx/LogOutput.log[/font] e procurando por [font=Courier New][LootPulse][/font]. Certifique-se também de que está dentro de um nível ativo (não no menu ou lobby).
+
+[b]Brackets aparecem mas o mapa não atualiza[/b]
+A API do mapa pode ter mudado após um update do jogo. Reporte como bug com o log completo — o mod tem fallbacks automáticos para a maioria das mudanças.
+
+[b]Conflito de tecla com outro mod[/b]
+Altere [b]ScanKey[/b] no arquivo de configuração para uma tecla sem conflito.
+
+[b]O mod não carrega[/b]
+Verifique se o [b]BepInExPack[/b] está instalado e ativo. Confira o [font=Courier New]BepInEx/LogOutput.log[/font] para mensagens de erro.
+
+[hr]
+
+[b][size=4]🔗 Links[/size][/b]
+
+[list]
+[*][url=https://github.com/HiarlyScripter/HiarlyScripter-LootPulse]Código-fonte no GitHub[/url]
+[*][url=https://discord.com/users/hiarly_ferreira]Contato — Discord[/url]
+[/list]
+
+[hr][hr]
+[center][i]— English version below —[/i][/center]
+[hr][hr]
+
+[center][b][size=5]🔍 LootPulse[/size][/b][/center]
+[center]Press [b]F[/b] to pulse-scan all valuables in range — discover brackets and map icons, instantly.[/center]
+
+[hr]
+
+[b][size=4]✨ What it does[/size][/b]
+
+LootPulse is a valuable scanner for R.E.P.O. Press the configured key to locate all valuable objects within the defined radius, trigger the game's native discovery effect (yellow brackets) on each one, and automatically register them on the map.
+
+No item stays hidden.
+
+[hr]
+
+[b][size=4]📡 Features[/size][/b]
+
+[list]
+[*][b]Key-triggered scan[/b] — press F (configurable) to pulse immediately
+[*][b]Visual brackets[/b] — triggers the game's native discovery animation on each valuable found
+[*][b]Map icons[/b] — all scanned valuables appear on the map automatically
+[*][b]Configurable radius[/b] — set the scan range from 5 to 200 meters
+[*][b]Configurable cooldown[/b] — prevents scan spam (0 to 60 seconds)
+[*][b]Resilient to game updates[/b] — critical APIs resolved via reflection; automatic fallbacks if the game updates
+[*][b]Detailed logs[/b] — know exactly how many items were found and processed
+[/list]
+
+[hr]
+
+[b][size=4]👥 Multiplayer[/size][/b]
+
+[b]Each player needs to install the mod[/b] to see the effects on their own screen. The scan is processed locally — each client acts independently.
+
+[list]
+[*][b]Only host has the mod[/b] — only the host sees brackets and map updates; other players see nothing
+[*][b]Everyone has the mod[/b] — each player uses their own scanner independently
+[*][b]Nobody has the mod[/b] — no changes to the game
+[/list]
+
+[hr]
+
+[b][size=4]⚙️ Configuration[/size][/b]
+
+Edit [font=Courier New]BepInEx/config/com.hiarlyscripter.repo.lootpulse.cfg[/font] or use [b]REPOConfig[/b] in-game:
+
+[b]ScanKey[/b] [i](Section: Scanner · default: F)[/i]
+Key that triggers the scanner. Supports any keyboard key.
+
+[b]ScanRange[/b] [i](Section: Scanner · default: 30 · range: 5–200)[/i]
+Detection radius in meters. Use larger values to sweep the entire level.
+
+[b]CooldownSeconds[/b] [i](Section: Scanner · default: 4 · range: 0–60)[/i]
+Minimum seconds between consecutive scans. Zero disables the cooldown.
+
+[b]EnableVisualBrackets[/b] [i](Section: Scanner · default: true)[/i]
+Displays discovery brackets on the valuables found.
+
+[b]EnableMapIcons[/b] [i](Section: Scanner · default: true)[/i]
+Adds valuable icons to the map when scanning.
+
+[b]RequireLevelOrRun[/b] [i](Section: Scanner · default: true)[/i]
+Only allows scanning during active runs (generated level). Disable only for testing outside a level.
+
+[b]VerboseLogging[/b] [i](Section: Scanner · default: false)[/i]
+Logs details of each individually processed item to BepInEx.LogOutput.log.
+
+[hr]
+
+[b][size=4]📦 Requirements[/size][/b]
+
+[b]Required[/b]
+[list]
+[*][b]BepInExPack 5.4.23.5[/b] — base framework for R.E.P.O. mods
+[/list]
+
+[b]Optional[/b]
+[list]
+[*][b]REPOConfig[/b] — edit settings inside the game without opening config files
+[/list]
+
+No other dependencies. LootPulse only uses the game's native APIs.
+
+[hr]
+
+[b][size=4]🛠️ Installation[/size][/b]
+
+[b]Manual installation (Vortex):[/b]
+[list]
+[*]Install [b]BepInExPack[/b] first
+[*]Use the [b]Mod Manager Download[/b] button on Nexus — Vortex installs automatically into the correct structure
+[*]Or manually: extract and copy the [font=Courier New]BepInEx/[/font] folder to the game directory
+[/list]
+
+The config file will be generated automatically at [font=Courier New]BepInEx/config/com.hiarlyscripter.repo.lootpulse.cfg[/font] on first run.
+
+[hr]
+
+[b][size=4]❓ Troubleshooting[/size][/b]
+
+[b]Pressing F does nothing[/b]
+Confirm the mod loaded by opening [font=Courier New]BepInEx/LogOutput.log[/font] and searching for [font=Courier New][LootPulse][/font]. Also make sure you're inside an active level (not the menu or lobby).
+
+[b]Brackets appear but map doesn't update[/b]
+The map API may have changed after a game update. Report as a bug with the full log — the mod has automatic fallbacks for most changes.
+
+[b]Key conflict with another mod[/b]
+Change [b]ScanKey[/b] in the config file to a key without conflicts.
+
+[b]Mod doesn't load[/b]
+Verify [b]BepInExPack[/b] is installed and active. Check [font=Courier New]BepInEx/LogOutput.log[/font] for error messages.
+
+[hr]
+
+[b][size=4]🔗 Links[/size][/b]
+
+[list]
+[*][url=https://github.com/HiarlyScripter/HiarlyScripter-LootPulse]Source code on GitHub[/url]
+[*][url=https://discord.com/users/hiarly_ferreira]Contact — Discord[/url]
+[/list]
