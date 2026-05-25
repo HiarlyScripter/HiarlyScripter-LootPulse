@@ -20,3 +20,4 @@ outdir = "./build"
 [publish]
 repository = "https://thunderstore.io"
 communities = ["repo"]
+categories = ["Mods", "Client-side", "Quality Of Life", "Valuables"]
