@@ -4,7 +4,7 @@ schemaVersion = "0.0.1"
 [package]
 namespace = "HiarlyScripter"
 name = "LootPulse"
-versionNumber = "1.0.0"
+versionNumber = "1.0.1"
 description = "Press F to pulse-scan all valuables in range -- shows discover brackets and adds map icons. Resilient to game updates via reflection-based API fallbacks."
 websiteUrl = "https://discord.com/users/hiarly_ferreira"
 containsNsfwContent = false
@@ -20,4 +20,4 @@ outdir = "./build"
 [publish]
 repository = "https://thunderstore.io"
 communities = ["repo"]
-categories = ["Mods", "Client-side", "Quality Of Life", "Valuables"]
+categories = []
