@@ -1,4 +1,4 @@
-# Guia de Upload — LootPulse v1.0.0 no Nexus Mods
+# Guia de Upload — LootPulse v1.0.2 no Nexus Mods
 
 ## 1. Acessar o formulário de upload
 
@@ -13,7 +13,7 @@
 |---|---|
 | **Mod name** | `LootPulse` |
 | **Summary** | `Press F to pulse-scan all valuables in range — shows discover brackets and adds map icons. Resilient to game updates via reflection-based API fallbacks.` |
-| **Version** | `1.0.0` |
+| **Version** | `1.0.2` |
 | **Category** | `Utilities` *(ou a mais próxima disponível para R.E.P.O.)* |
 | **Language** | `Any` |
 | **Is adult content?** | `No` |
@@ -33,7 +33,7 @@
 
 ## 4. Arquivo principal (ZIP)
 
-Arquivo: `LootPulse-v1.0.0-NexusMods.zip` (nesta pasta)
+Arquivo: `LootPulse-v1.0.2-NexusMods.zip` (nesta pasta)
 
 - Estrutura interna: `BepInEx/plugins/HiarlyScripter-LootPulse/LootPulse.dll`
 - O Vortex instala automaticamente com essa estrutura
@@ -63,9 +63,9 @@ loot, scanner, valuable, map, quality of life, bepinex
 
 - [ ] Mod name: `LootPulse`
 - [ ] Summary preenchido (máx 255 chars)
-- [ ] Versão: `1.0.0`
+- [ ] Versão: `1.0.2`
 - [ ] Descrição importada via **Import description** (não colada manualmente)
-- [ ] ZIP correto anexado: `LootPulse-v1.0.0-NexusMods.zip`
+- [ ] ZIP correto anexado: `LootPulse-v1.0.2-NexusMods.zip`
 - [ ] Banner (Main image) carregado
 - [ ] Imagem de galeria carregada
 - [ ] Adult content: **No**
