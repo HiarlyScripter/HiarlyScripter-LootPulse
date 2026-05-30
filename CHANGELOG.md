@@ -2,10 +2,19 @@
 
 ---
 
-## v1.0.1 — em desenvolvimento
+## v1.0.2 — 2026-05-25
 **Compatibilidade:** R.E.P.O. Build `23250495` (v0.4.3.2) · BepInEx `5.4.23.5`
 
-*(sem alterações ainda)*
+### Alterado
+- Ícone do mod atualizado para o design do scanner dourado com mira e símbolo $
+
+---
+
+## v1.0.1 — 2026-05-25
+**Compatibilidade:** R.E.P.O. Build `23250495` (v0.4.3.2) · BepInEx `5.4.23.5`
+
+### Alterado
+- Primeira tentativa de atualização de ícone (substituída na v1.0.2)
 
 ---
 
