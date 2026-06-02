@@ -2,11 +2,28 @@
 
 ---
 
+## v1.0.4 — 2026-06-02
+**Compatibilidade:** R.E.P.O. Build `23250495` (v0.4.3.2) · BepInEx `5.4.23.5`
+
+### Alterado
+- Ícone atualizado: scanner com anéis dourados e nome "Loot Pulse" centralizado
+
+---
+
+## v1.0.3 — 2026-06-02
+**Compatibilidade:** R.E.P.O. Build `23250495` (v0.4.3.2) · BepInEx `5.4.23.5`
+
+### Alterado
+- Ícone atualizado: primeira versão com o design do scanner da galeria (substituída na v1.0.4)
+
+---
+
 ## v1.0.2 — 2026-05-25
 **Compatibilidade:** R.E.P.O. Build `23250495` (v0.4.3.2) · BepInEx `5.4.23.5`
 
 ### Alterado
-- Ícone do mod atualizado para o design do scanner dourado com mira e símbolo $
+- Ícone corrigido para o design do scanner dourado com mira e símbolo $
+- Primeira publicação no Nexus Mods
 
 ---
 
@@ -28,4 +45,3 @@
 - Config `ScanRadius` (5–200 metros, padrão: 20)
 - Config `ScanKey` (qualquer tecla, padrão: F)
 - Fallbacks via reflexão para APIs críticas — resiliente a updates do jogo
-
