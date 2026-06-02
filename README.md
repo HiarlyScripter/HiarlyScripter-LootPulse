@@ -1,6 +1,6 @@
 # 🔍 LootPulse
 
-[![Thunderstore](https://img.shields.io/badge/Thunderstore-v1.0.2-brightgreen?style=flat-square&logo=thunderstore)](https://thunderstore.io/c/repo/p/HiarlyScripter/LootPulse/)
+[![Thunderstore](https://img.shields.io/badge/Thunderstore-v1.0.4-brightgreen?style=flat-square&logo=thunderstore)](https://thunderstore.io/c/repo/p/HiarlyScripter/LootPulse/)
 [![Nexus Mods](https://img.shields.io/badge/Nexus%20Mods-255-orange?style=flat-square&logo=nexusmods)](https://www.nexusmods.com/repo/mods/255)
 [![R.E.P.O.](https://img.shields.io/badge/R.E.P.O.-Build%2023250495-blue?style=flat-square)](https://store.steampowered.com/app/3241660/REPO/)
 [![BepInEx](https://img.shields.io/badge/BepInEx-5.4.23.5-yellow?style=flat-square)](https://thunderstore.io/c/repo/p/BepInEx/BepInExPack/)

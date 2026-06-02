@@ -4,7 +4,7 @@ schemaVersion = "0.0.1"
 [package]
 namespace = "HiarlyScripter"
 name = "LootPulse"
-versionNumber = "1.0.2"
+versionNumber = "1.0.4"
 description = "Press F to pulse-scan all valuables in range -- shows discover brackets and adds map icons. Resilient to game updates via reflection-based API fallbacks."
 websiteUrl = "https://discord.com/users/hiarly_ferreira"
 containsNsfwContent = false

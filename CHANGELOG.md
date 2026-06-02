@@ -28,3 +28,4 @@
 - Config `ScanRadius` (5–200 metros, padrão: 20)
 - Config `ScanKey` (qualquer tecla, padrão: F)
 - Fallbacks via reflexão para APIs críticas — resiliente a updates do jogo
+
