@@ -16,6 +16,55 @@
 
 ---
 
+## v1.0.6 — 2026-06-04 — Runtime Approved (hotfix)
+
+**Status:** `v1.0.6 stable runtime-approved`
+**Build marker:** `v1.0.6-release`
+
+**Causa raiz do bug corrigido:**
+- O Unity/BepInEx loop original (`BaseUnityPlugin.Update()` + `new GameObject()` + `DontDestroyOnLoad`) não alcançava a lógica do scan de forma confiável na build atual do R.E.P.O. v0.4.4.3. GameObjects criados durante o Chainloader init (antes da cena Unity estar ativa) não entram no ciclo de update do jogo nessa build.
+- Diagnóstico confirmado via inspeção de `Assembly-CSharp.dll` por reflexão .NET.
+
+**Correção aplicada:**
+- Harmony postfix em `GameDirector.Update` — piggybacks no loop nativo do jogo.
+- Fallback chain: `GameDirector.Update` → `PlayerAvatar.Update` → `PlayerController.Update`.
+- Resolução de tipo em runtime via `AppDomain.CurrentDomain.GetAssemblies()` — resiliente a renames futuros.
+- Watchdog ThreadPool: avisa se 60s passarem sem tick após patch instalado.
+- Frame deduplication: `Time.frameCount == _lastTickFrame` evita double-tick.
+
+**Teste runtime aprovado (Level - Manor, singleplayer):**
+
+| Scan | found | brackets | map  | errors |
+|------|-------|----------|------|--------|
+| 1    | 2     | 2/2      | 2/2  | 0      |
+| 2    | 24    | 24/24    | 24/24| 0      |
+| 3    | 13    | 13/13    | 13/13| 0      |
+
+- `Harmony tick patch installed: GameDirector.Update` ✅
+- `Harmony game loop active: GameDirector.Update` ✅
+- `Scan key detected: F | source=GameDirector.Update` ✅
+- `brackets=100% | map=100% | errors=0` ✅
+
+**Pacote:**
+- ZIP Thunderstore: `releases/HiarlyScripter-LootPulse-1.0.6.zip`
+- SHA256: `CFEC9C57B983FA73573958E809B2E553D25205862907CFA7F7F9C718E0D0F90F`
+- Conteúdo: `plugins/HiarlyScripter-LootPulse/LootPulse.dll`, `icon.png`, `manifest.json`, `README.md`, `CHANGELOG.md`
+- `0Harmony.dll` **não empacotado** (`<Private>false</Private>` no .csproj) ✅
+
+**Publicado em:**
+- GitHub: commit `fix: release LootPulse v1.0.6 execution loop hotfix` · tag `v1.0.6` · Release com ZIP anexado
+- Thunderstore: `HiarlyScripter/LootPulse` v1.0.6
+- Nexus Mods: ZIP `LootPulse-v1.0.6-NexusMods.zip` atualizado
+
+**Backlog v1.1.0+** (sem implementação nesta versão):
+- Filtro de valuables já descobertos
+- `AddMapIconsOnlyOnce`, `MaxItemsPerScan`
+- Auto-pulso / modo toggle
+- Efeitos visuais por valor, feedback sonoro
+- Whitelist/blacklist por categoria
+
+---
+
 ## v1.0.0 — 2026-05-24 — Runtime Approved (stable)
 
 **Status:** `v1.0.0 stable runtime-approved`

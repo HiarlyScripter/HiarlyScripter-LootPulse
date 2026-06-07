@@ -98,7 +98,10 @@ O arquivo de configuração será gerado automaticamente em [font=Courier New]Be
 [b][size=4]❓ Problemas comuns[/size][/b]
 
 [b]Pressiono F e nada acontece[/b]
-Confirme que o mod carregou abrindo [font=Courier New]BepInEx/LogOutput.log[/font] e procurando por [font=Courier New][LootPulse][/font]. Certifique-se também de que está dentro de um nível ativo (não no menu ou lobby).
+Confirme que o mod carregou abrindo [font=Courier New]BepInEx/LogOutput.log[/font] e procurando por [font=Courier New][LootPulse] Harmony tick patch installed[/font]. Se aparecer, mas F ainda não responde, certifique-se de que está dentro de uma run ativa (não no menu ou lobby) e que [font=Courier New]RequireLevelOrRun=true[/font] está correto no config.
+
+[b]Mod carrega mas pressionar F nunca aciona o scan (versão anterior)[/b]
+Corrigido na [b]v1.0.6[/b]. O loop de execução foi movido de MonoBehaviour para um patch Harmony em [font=Courier New]GameDirector.Update[/font], corrigindo um problema em que o scan não era acionado de forma confiável na build atual do R.E.P.O. Atualize para v1.0.6.
 
 [b]Brackets aparecem mas o mapa não atualiza[/b]
 A API do mapa pode ter mudado após um update do jogo. Reporte como bug com o log completo — o mod tem fallbacks automáticos para a maioria das mudanças.
@@ -220,7 +223,10 @@ The config file will be generated automatically at [font=Courier New]BepInEx/con
 [b][size=4]❓ Troubleshooting[/size][/b]
 
 [b]Pressing F does nothing[/b]
-Confirm the mod loaded by opening [font=Courier New]BepInEx/LogOutput.log[/font] and searching for [font=Courier New][LootPulse][/font]. Also make sure you're inside an active level (not the menu or lobby).
+Confirm the mod loaded by opening [font=Courier New]BepInEx/LogOutput.log[/font] and searching for [font=Courier New][LootPulse] Harmony tick patch installed[/font]. If it appears but F still doesn't respond, make sure you are inside an active run (not the menu or lobby) and that [font=Courier New]RequireLevelOrRun=true[/font] is correct in the config.
+
+[b]Mod loads but pressing F never triggers the scan (older version)[/b]
+Fixed in [b]v1.0.6[/b]. The execution loop was moved from MonoBehaviour to a Harmony patch on [font=Courier New]GameDirector.Update[/font], fixing an issue where the scan was not reliably triggered on the current R.E.P.O. build. Update to v1.0.6.
 
 [b]Brackets appear but map doesn't update[/b]
 The map API may have changed after a game update. Report as a bug with the full log — the mod has automatic fallbacks for most changes.

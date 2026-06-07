@@ -1,83 +1,205 @@
 # 🔍 LootPulse
 
-[![Versão](https://img.shields.io/badge/versão-1.0.0-brightgreen?style=flat-square)]()
-[![R.E.P.O.](https://img.shields.io/badge/R.E.P.O.-Build%2023250495-blue?style=flat-square)]()
-[![BepInEx](https://img.shields.io/badge/BepInEx-5.4.23.5-yellow?style=flat-square)]()
-[![Multiplayer](https://img.shields.io/badge/Multiplayer-Client--side-9b59b6?style=flat-square)]()
-[![REPOConfig](https://img.shields.io/badge/REPOConfig-compatível-orange?style=flat-square)]()
-
-> Pressione **F** para pulsar o radar — todos os valuables no raio acendem com brackets amarelos e aparecem no mapa.
+**[Português (BR)](#português-br) | [English](#english)**
 
 ---
 
-## ✨ O que faz
+## Português (BR)
 
-LootPulse é um scanner de valuables para R.E.P.O. Ao pressionar a tecla de scan, o mod localiza todos os objetos valiosos no raio configurado, exibe o efeito visual de descoberta nativo do jogo (brackets amarelos) em cada um e os registra no mapa.
+Pressione **F** para escanear todos os valuables no raio — revela os brackets de descoberta nativos do jogo e adiciona ícones no mapa.
 
-## 📡 Funcionalidades
+### ✨ O que faz
 
-- 📡 **Scan de valuables** — detecta todos os objetos valiosos no raio configurado
-- 🟡 **Brackets visuais** — ativa o efeito de descoberta nativo do jogo em cada valuable
-- 🗺️ **Ícones no mapa** — adiciona automaticamente ao mapa do R.E.P.O.
-- 🔄 **Cooldown configurável** — evita spam de scan
-- 🛡️ **Resiliente a updates** — fallbacks automáticos se alguma API do jogo mudar
-- 📋 **Logs detalhados** — sabe exatamente quantos itens foram encontrados e processados
+Com um único aperto de tecla, o LootPulse localiza todos os objetos valiosos no raio configurado, ativa os brackets amarelos de descoberta do jogo em cada item e os adiciona ao mapa. Nenhum valuable fica escondido.
 
-## 👥 Quem precisa instalar?
+### 🎯 Recursos
 
-> Cada jogador que quiser usar o scanner precisa ter o mod instalado.
+- 🔍 **Scan por tecla** — pressione F (configurável) para ativar o pulso imediatamente
+- 📍 **Brackets de descoberta** — usa a animação nativa do jogo em cada valuable encontrado
+- 🗺️ **Ícones no mapa** — todos os valuables escaneados aparecem no mapa automaticamente
+- 📏 **Raio configurável** — ajuste o alcance de 5 a 200 metros
+- ⏱️ **Cooldown configurável** — evita spam de scan (0–60 segundos)
+- 🛡️ **Resiliente a updates** — APIs críticas resolvidas via reflexão e Harmony; fallbacks automáticos
 
-| Cenário | Resultado |
-|---|---|
-| Só o host tem o mod | Apenas o host vê os brackets e o mapa atualizado |
-| Todos os jogadores têm | Cada jogador usa seu próprio scanner independentemente |
-| Ninguém tem | Nenhuma alteração no jogo |
+### 👥 Multiplayer
 
-## ⚙️ Configurações
+Cada jogador precisa instalar o mod para ver os efeitos na sua tela.
 
-| Seção | Chave | Padrão | Descrição |
-|---|---|---|---|
-| Scanner | ScanKey | F | Tecla para ativar o scanner |
-| Scanner | ScanRange | 30 | Raio de detecção em metros (5–200) |
-| Scanner | CooldownSeconds | 4 | Segundos mínimos entre scans (0–60) |
-| Scanner | EnableVisualBrackets | true | Exibir brackets visuais nos valuables |
-| Scanner | EnableMapIcons | true | Adicionar valuables ao mapa |
-| Scanner | RequireLevelOrRun | true | Só ativa durante runs (não no menu/lobby) |
-| Scanner | VerboseLogging | false | Log detalhado de cada item processado |
+- **Só o host tem o mod** — apenas o host vê brackets e mapa
+- **Todos têm o mod** — cada jogador usa seu próprio scanner
+- **Ninguém tem o mod** — nenhuma alteração
 
-## 📦 Dependências
+### 🕹️ Como usar
 
-| Mod | Obrigatória? | Versão |
-|---|---|---|
-| BepInExPack | ✅ Sim | 5.4.2100+ |
-| REPOConfig | ❌ Opcional | Qualquer — edita configs in-game |
+1. Entre em uma **run ativa** (fase gerada — não no menu ou lobby)
+2. Pressione **F**
+3. Todos os valuables no raio de 30m recebem **brackets amarelos de descoberta**
+4. **Ícones** aparecem no mapa automaticamente
 
-## 🖼️ Screenshots
-
-*Em breve.*
-<!-- SCREENSHOTS_PLACEHOLDER -->
-
-## 🛠️ Instalação rápida
+### 📦 Instalação
 
 **Via r2modman (recomendado):**
-1. Instale o BepInExPack pelo Thunderstore
-2. Instale o LootPulse
-3. Start modded
+1. Instale o **BepInExPack**
+2. Procure e instale o **LootPulse** aqui no Thunderstore
+3. *(Opcional)* Instale o **REPOConfig** para editar configurações dentro do jogo
+4. Clique em **Start modded**
 
 **Manual:**
-1. Instale BepInExPack
+1. Instale o **BepInExPack**
 2. Copie `plugins/HiarlyScripter-LootPulse/` para `BepInEx/plugins/`
-3. Inicie o jogo
 
-## ❓ Problemas comuns
+### ⚙️ Configurações
 
-| Problema | Solução |
-|---|---|
-| Brackets não aparecem, mas o log mostra "encontrados=X" | Confira se `EnableVisualBrackets=true` no config |
-| Nenhum valuable encontrado no scan | Verifique se está dentro de um nível (não no menu/shop) e se há valuables no raio |
-| Scanner dispara com a mesma tecla de outro mod | Mude a `ScanKey` nas configurações para uma tecla sem conflito |
-| Erro no log após apertar F no menu | Defina `RequireLevelOrRun=true` ou só use em nível ativo |
+Edite `BepInEx/config/com.hiarlyscripter.repo.lootpulse.cfg` ou use o **REPOConfig** dentro do jogo:
+
+| Chave | Padrão | Descrição |
+|---|---|---|
+| `ScanKey` | `F` | Tecla que ativa o scanner |
+| `ScanRange` | `30` | Raio de detecção em metros (5–200) |
+| `CooldownSeconds` | `4` | Segundos mínimos entre scans (0–60) |
+| `EnableVisualBrackets` | `true` | Exibe brackets de descoberta |
+| `EnableMapIcons` | `true` | Adiciona ícones no mapa |
+| `RequireLevelOrRun` | `true` | Exige run ativa para escanear |
+| `VerboseLogging` | `false` | Log detalhado de cada item processado |
+
+### ⚠️ Compatibilidade
+
+**Não instale junto com o BetterItemScanner.** O BetterItemScanner está quebrado na build atual do R.E.P.O. e usa a mesma tecla F. Conflito garantido.
+
+### 🔧 Diagnóstico
+
+Se pressionar F não fizer nada, verifique `BepInEx/LogOutput.log`. O log deve conter:
+
+```
+[LootPulse] Harmony tick patch installed: GameDirector.Update
+[LootPulse] Harmony game loop active: GameDirector.Update
+```
+
+Ao pressionar F dentro de uma run:
+
+```
+[LootPulse] Scan key detected: F | source=GameDirector.Update
+[LootPulse] Scan executed | origin=... | range=30m | api=SemiFunc | found=X
+[LootPulse] Result | brackets=X/X | map=X/X | errors=0
+```
+
+### 🗓️ Histórico resumido
+
+| Versão | Data | Destaque |
+|---|---|---|
+| v1.0.6 | 2026-06-04 | **Hotfix: loop de execução** — scan agora usa Harmony em `GameDirector.Update`; logs diagnósticos |
+| v1.0.5 | 2026-06-02 | Ícone atualizado |
+| v1.0.0 | 2026-05-24 | Release inicial |
+
+### 🔮 Backlog futuro (sem data definida)
+
+Ideias para versões futuras — sem compromisso de prazo:
+
+- Filtro de valuables já descobertos
+- `AddMapIconsOnlyOnce`, `MaxItemsPerScan`
+- Auto-pulso / modo toggle
+- Efeitos visuais por valor, feedback sonoro
+- Whitelist/blacklist por categoria
 
 ---
 
-*Mod criado por **[HiarlyScripter](https://discord.com/users/hiarly_ferreira)** — Testado com R.E.P.O. Build `23250495` · BepInEx `5.4.23.5`*
+## English
+
+Press **F** to scan all valuables within range — reveals the game's native discovery brackets and adds map icons.
+
+### ✨ What it does
+
+With a single keypress, LootPulse locates all valuable objects within the configured range, triggers the game's native yellow discovery brackets on each item, and adds them to the map. No valuable stays hidden.
+
+### 🎯 Features
+
+- 🔍 **Key-triggered scan** — press F (configurable) to pulse immediately
+- 📍 **Discovery brackets** — uses the game's native animation on each valuable found
+- 🗺️ **Map icons** — all scanned valuables appear on the map automatically
+- 📏 **Configurable range** — set the scan radius from 5 to 200 meters
+- ⏱️ **Configurable cooldown** — prevents scan spam (0–60 seconds)
+- 🛡️ **Resilient to updates** — critical APIs resolved via reflection and Harmony; automatic fallbacks
+
+### 👥 Multiplayer
+
+Each player needs to install the mod to see the effects on their screen.
+
+- **Only host has the mod** — only host sees brackets and map
+- **Everyone has the mod** — each player uses their own scanner
+- **Nobody has the mod** — no changes
+
+### 🕹️ How to use
+
+1. Enter an **active run** (generated level — not the menu or lobby)
+2. Press **F**
+3. All valuables within 30m radius receive **yellow discovery brackets**
+4. **Icons** appear on the map automatically
+
+### 📦 Installation
+
+**Via r2modman (recommended):**
+1. Install **BepInExPack**
+2. Search and install **LootPulse** from Thunderstore
+3. *(Optional)* Install **REPOConfig** to edit settings in-game
+4. Click **Start modded**
+
+**Manual:**
+1. Install **BepInExPack**
+2. Copy `plugins/HiarlyScripter-LootPulse/` to `BepInEx/plugins/`
+
+### ⚙️ Configuration
+
+Edit `BepInEx/config/com.hiarlyscripter.repo.lootpulse.cfg` or use **REPOConfig** in-game:
+
+| Key | Default | Description |
+|---|---|---|
+| `ScanKey` | `F` | Key that triggers the scanner |
+| `ScanRange` | `30` | Detection radius in meters (5–200) |
+| `CooldownSeconds` | `4` | Minimum seconds between scans (0–60) |
+| `EnableVisualBrackets` | `true` | Show discovery brackets |
+| `EnableMapIcons` | `true` | Add icons to map |
+| `RequireLevelOrRun` | `true` | Only scan during active runs |
+| `VerboseLogging` | `false` | Log details per processed item |
+
+### ⚠️ Compatibility
+
+**Do not install alongside BetterItemScanner.** BetterItemScanner is broken on the current R.E.P.O. build and uses the same F key. Conflict is guaranteed.
+
+### 🔧 Troubleshooting
+
+If pressing F does nothing, check `BepInEx/LogOutput.log`. It should contain:
+
+```
+[LootPulse] Harmony tick patch installed: GameDirector.Update
+[LootPulse] Harmony game loop active: GameDirector.Update
+```
+
+When pressing F inside a run:
+
+```
+[LootPulse] Scan key detected: F | source=GameDirector.Update
+[LootPulse] Scan executed | origin=... | range=30m | api=SemiFunc | found=X
+[LootPulse] Result | brackets=X/X | map=X/X | errors=0
+```
+
+### 🗓️ Changelog summary
+
+| Version | Date | Highlight |
+|---|---|---|
+| v1.0.6 | 2026-06-04 | **Hotfix: execution loop** — scan now uses Harmony on `GameDirector.Update`; diagnostic logs |
+| v1.0.5 | 2026-06-02 | Updated icon |
+| v1.0.0 | 2026-05-24 | Initial release |
+
+### 🔮 Future backlog (no timeline)
+
+Ideas for future versions — not implemented yet, no timeline commitment:
+
+- Filter already-discovered valuables
+- `AddMapIconsOnlyOnce`, `MaxItemsPerScan`
+- Auto-pulse / toggle mode
+- Visual effects by value, sound feedback
+- Whitelist/blacklist by category
+
+---
+
+*Mod by **[HiarlyScripter](https://discord.com/users/hiarly_ferreira)** · Tested on R.E.P.O. v0.4.4.3 · BepInEx 5.4.23.5*
