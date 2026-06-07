@@ -17,6 +17,10 @@ icon = "./package/icon.png"
 readme = "./package/README.md"
 outdir = "./build"
 
+[[build.copy_paths]]
+source = "./package/plugins"
+target = "/"
+
 [publish]
 repository = "https://thunderstore.io"
 communities = ["repo"]
