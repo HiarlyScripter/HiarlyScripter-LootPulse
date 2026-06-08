@@ -2,6 +2,14 @@
 
 ---
 
+## v1.0.7 — 2026-06-08
+**Compatibilidade:** R.E.P.O. v0.4.4.3 · BepInEx `5.4.23.5`
+
+### Changed
+- README updated to bilingual PT-BR + EN (no code or gameplay changes)
+
+---
+
 ## v1.0.6 — 2026-06-04
 **Compatibilidade:** R.E.P.O. v0.4.4.3 · BepInEx `5.4.23.5`
 
