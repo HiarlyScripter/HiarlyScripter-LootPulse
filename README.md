@@ -1,8 +1,8 @@
 # 🔍 LootPulse
 
-[![Thunderstore](https://img.shields.io/badge/Thunderstore-v1.0.6-brightgreen?style=flat-square&logo=thunderstore)](https://thunderstore.io/c/repo/p/HiarlyScripter/LootPulse/)
+[![Thunderstore](https://img.shields.io/badge/Thunderstore-v1.0.8-brightgreen?style=flat-square&logo=thunderstore)](https://thunderstore.io/c/repo/p/HiarlyScripter/LootPulse/)
 [![Nexus Mods](https://img.shields.io/badge/Nexus%20Mods-255-orange?style=flat-square&logo=nexusmods)](https://www.nexusmods.com/repo/mods/255)
-[![R.E.P.O.](https://img.shields.io/badge/R.E.P.O.-v0.4.4.3-blue?style=flat-square)](https://store.steampowered.com/app/3241660/REPO/)
+[![R.E.P.O.](https://img.shields.io/badge/R.E.P.O.-build%2026407089-blue?style=flat-square)](https://store.steampowered.com/app/3241660/REPO/)
 [![BepInEx](https://img.shields.io/badge/BepInEx-5.4.23.5-yellow?style=flat-square)](https://thunderstore.io/c/repo/p/BepInEx/BepInExPack/)
 [![Licença](https://img.shields.io/badge/licença-crédito%20obrigatório-red?style=flat-square)](LICENSE)
 
@@ -105,6 +105,7 @@ Se `Harmony tick patch installed` aparecer mas `Scan key detected` não:
 
 | Versão | Data | Destaque |
 |---|---|---|
+| v1.0.8 | 2026-11-06 | Revalidado para o update do jogo (build 26407089); sem mudanças de gameplay |
 | v1.0.6 | 2026-06-04 | **Hotfix: loop de execução** — scan agora usa Harmony em `GameDirector.Update`; logs diagnósticos |
 | v1.0.5 | 2026-06-02 | Ícone atualizado (design scanner) |
 | v1.0.0 | 2026-05-24 | Release inicial |
@@ -218,6 +219,7 @@ If `Harmony tick patch installed` appears but `Scan key detected` does not:
 
 | Version | Date | Highlight |
 |---|---|---|
+| v1.0.8 | 2026-11-06 | Revalidated for the game update (build 26407089); no gameplay changes |
 | v1.0.6 | 2026-06-04 | **Hotfix: execution loop** — scan now uses Harmony on `GameDirector.Update`; diagnostic logs |
 | v1.0.5 | 2026-06-02 | Updated icon (scanner design) |
 | v1.0.0 | 2026-05-24 | Initial release |
@@ -236,4 +238,4 @@ Ideas for future versions — not implemented yet, no timeline commitment:
 
 ---
 
-*Mod by **[HiarlyScripter](https://discord.com/users/hiarly_ferreira)** · Tested on R.E.P.O. v0.4.4.3 · BepInEx 5.4.23.5*
+*Mod by **[HiarlyScripter](https://discord.com/users/hiarly_ferreira)** · Tested on R.E.P.O. build 26407089 · BepInEx 5.4.23.5*

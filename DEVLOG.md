@@ -16,11 +16,11 @@
 
 ---
 
-## Update do jogo — 2026-11-06 — UNTESTED
+## v1.0.8 — 2026-11-06 — Aprovado pelo Hiarly
 
 - Jogo: Steam build 26407089 (Unity 6000.3.17). APIs usadas conferidas por decompilação: inalteradas.
 - Código: fallback passou a usar `FindObjectsByType(FindObjectsSortMode.None)` (zera o warning CS0618). Sem mudança de comportamento.
-- Branch `update/novo-patch-2026-11`; aguardando teste in-game e "aprovado" antes do bump 1.0.8.
+- Branch `update/novo-patch-2026-11`; teste in-game aprovado pelo Hiarly; versão 1.0.8 (manifest, toml, Core.cs, README, CHANGELOG).
 
 ---
 
