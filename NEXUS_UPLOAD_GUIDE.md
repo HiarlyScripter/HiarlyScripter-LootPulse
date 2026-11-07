@@ -1,81 +1,98 @@
-# Guia de Upload — LootPulse v1.0.2 no Nexus Mods
+# Guia de Upload — LootPulse v1.0.8 no Nexus Mods
 
-## 1. Acessar o formulário de upload
+## 1. Acessar a página do mod (já publicado — atualizar, não criar)
 
-- URL do jogo no Nexus: `https://www.nexusmods.com/repo`
-- Clique em **Upload mod** (canto superior direito, logado)
+- URL direta: `https://www.nexusmods.com/repo/mods/255`
+- Clique em **Manage mod** → **Files** → **Add file**
 
 ---
 
-## 2. Campos do formulário
+## 2. Adicionar novo arquivo (aba Files)
 
 | Campo | Valor |
 |---|---|
-| **Mod name** | `LootPulse` |
-| **Summary** | `Press F to pulse-scan all valuables in range — shows discover brackets and adds map icons. Resilient to game updates via reflection-based API fallbacks.` |
-| **Version** | `1.0.2` |
-| **Category** | `Utilities` *(ou a mais próxima disponível para R.E.P.O.)* |
-| **Language** | `Any` |
-| **Is adult content?** | `No` |
+| **File name** | `LootPulse-v1.0.8-NexusMods` |
+| **Version** | `1.0.8` |
+| **Description** | `v1.0.8 — Revalidated for the 2026-11-06 game update (build 26407089). No gameplay changes.` |
+| **Set as main file** | ✅ Sim |
 
----
-
-## 3. Descrição (BBCode)
-
-1. Abra o arquivo `NEXUS_DESCRIPTION.bbcode` nesta pasta
-2. Selecione tudo (`Ctrl+A`) e copie (`Ctrl+C`)
-3. No formulário do Nexus, clique em **"Import description"** (ícone de seta para cima no editor)
-4. Cole o conteúdo e confirme
-
-> ⚠️ Use **Import description**, nunca cole diretamente no editor visual — o editor visual quebra as tags BBCode.
-
----
-
-## 4. Arquivo principal (ZIP)
-
-Arquivo: `LootPulse-v1.0.2-NexusMods.zip` (nesta pasta)
+Arquivo a anexar: `releases\LootPulse-v1.0.8-NexusMods.zip`
 
 - Estrutura interna: `BepInEx/plugins/HiarlyScripter-LootPulse/LootPulse.dll`
 - O Vortex instala automaticamente com essa estrutura
 
 ---
 
-## 5. Imagens
+## 3. Atualizar a versão na página principal
 
-Pasta `media/` neste diretório:
-
-| Arquivo | Uso |
-|---|---|
-| `nexus_banner_1300x372.png` | **Main image** (banner do topo da página) |
-| `nexus_gallery_1920x1080.png` | **Images** (galeria da página) |
+- Vá em **Manage mod** → **Edit mod**
+- Campo **Version**: altere para `1.0.8`
+- Clique **Save**
 
 ---
 
-## 6. Tags (opcional)
+## 4. Atualizar a descrição (BBCode)
+
+1. Abra o arquivo `NEXUS_DESCRIPTION.bbcode` nesta pasta
+2. Selecione tudo (`Ctrl+A`) e copie (`Ctrl+C`)
+3. Em **Edit mod** → aba **Description**, clique em **"Import description"** (ícone de seta no editor)
+4. Cole o conteúdo e confirme
+5. Salve
+
+> ⚠️ Use **Import description**, nunca cole diretamente no editor visual — o editor visual quebra as tags BBCode.
+
+---
+
+## 5. Post de changelog / update (opcional)
+
+Se a página permitir "Posts" ou "Articles", use o texto curto bilíngue:
+
+**PT-BR:**
+`v1.0.8 revalida o mod para o update do R.E.P.O. de 06/11/2026 (build 26407089). Nenhuma mudança de gameplay.`
+
+**EN:**
+`v1.0.8 revalidates the mod for the 2026-11-06 R.E.P.O. update (build 26407089). No gameplay changes.`
+
+---
+
+## 6. Resposta ao usuário que reportou o bug
+
+Cole no comentário/bug report do usuário:
 
 ```
-loot, scanner, valuable, map, quality of life, bepinex
+Thanks again for the report. I reproduced the issue and found the cause: LootPulse was
+loading correctly, but on the current R.E.P.O. build the original Unity/BepInEx update
+loop was not reliably reaching the scan logic, so pressing F could do nothing even though
+the plugin appeared loaded.
+
+This is fixed in v1.0.8.
+
+The scan trigger now runs through a Harmony-patched game loop, and I also added clearer
+diagnostic logs for startup, config, key detection, blocked scans, and scan results.
+
+Please update to v1.0.8 and test again. When pressing F inside an active level, the log
+should show:
+
+  Scan key detected: F
+  Scan executed
+  Result | brackets=X/X | map=X/X | errors=0
+
+Also make sure the old BetterItemScanner mod is not installed/enabled at the same time,
+since it is broken on the current R.E.P.O. build and uses the same key.
 ```
 
 ---
 
-## 7. Checklist final antes de publicar
+## 7. Checklist final
 
-- [ ] Mod name: `LootPulse`
-- [ ] Summary preenchido (máx 255 chars)
-- [ ] Versão: `1.0.2`
-- [ ] Descrição importada via **Import description** (não colada manualmente)
-- [ ] ZIP correto anexado: `LootPulse-v1.0.2-NexusMods.zip`
-- [ ] Banner (Main image) carregado
-- [ ] Imagem de galeria carregada
-- [ ] Adult content: **No**
-- [ ] Clicar **Save** e verificar a página pública
+- [ ] Arquivo `LootPulse-v1.0.8-NexusMods.zip` adicionado como **main file**
+- [ ] Versão da página atualizada para `1.0.8`
+- [ ] Descrição importada via **Import description**
+- [ ] Resposta postada ao usuário que reportou o bug
+- [ ] Página pública carregando corretamente
 
 ---
 
 ## 8. Após publicar
 
-Me passe o link da página do mod no Nexus para:
-- Atualizar o GitHub Release com o link
-- Verificar se o BBCode renderizou corretamente
-- Adicionar o badge Nexus ao README do GitHub
+Passe o link da página para atualizar o GitHub Release com o badge/link do Nexus.
