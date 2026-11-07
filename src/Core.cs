@@ -363,7 +363,7 @@ namespace LootPulse
         {
             var result    = new List<PhysGrabObject>();
             float sqRange = range * range;
-            foreach (var vo in FindObjectsOfType<ValuableObject>())
+            foreach (var vo in FindObjectsByType<ValuableObject>(FindObjectsSortMode.None))
             {
                 if (vo == null) continue;
                 if ((vo.transform.position - origin).sqrMagnitude > sqRange) continue;
