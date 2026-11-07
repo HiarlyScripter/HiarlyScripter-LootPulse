@@ -7,5 +7,5 @@
 
 ## Atualização (mesma data)
 - Branch `update/novo-patch-2026-11`. Único ajuste de código: `FindObjectsOfType` -> `FindObjectsByType(FindObjectsSortMode.None)` no fallback. Build 0 erros / 0 warnings.
-- DLL copiada para o perfil `REPO - Test`. Resultado: UNTESTED.
+- DLL nova NÃO copiada para o perfil `REPO - Test` (REPO.exe aberto trava o arquivo). Copiar com o jogo fechado. Resultado: UNTESTED.
 - Roteiro: entrar numa fase (solo), apertar F 3x; conferir brackets, ícones no mapa e `errors=0` no log; testar cooldown e F fora da fase (deve bloquear).
