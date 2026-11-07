@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace LootPulse
 {
-    [BepInPlugin("com.hiarlyscripter.repo.lootpulse", "LootPulse", "1.0.6")]
+    [BepInPlugin("com.hiarlyscripter.repo.lootpulse", "LootPulse", "1.0.8")]
     public sealed class LootPulsePlugin : BaseUnityPlugin
     {
         internal static LootPulsePlugin Instance { get; private set; }
@@ -58,7 +58,7 @@ namespace LootPulse
             VerboseLogging = Config.Bind("Scanner", "VerboseLogging", false,
                 "Log details for each individually processed item.");
 
-            Log.LogInfo($"v1.0.6 loaded. Press {ScanKey.Value} to scan valuables.");
+            Log.LogInfo($"v1.0.8 loaded. Press {ScanKey.Value} to scan valuables.");
             Log.LogInfo(
                 $"Config | key={ScanKey.Value} | range={ScanRange.Value} | cooldown={CooldownSeconds.Value} | " +
                 $"visualBrackets={EnableVisualBrackets.Value} | mapIcons={EnableMapIcons.Value} | " +
@@ -66,7 +66,7 @@ namespace LootPulse
 
             // Build identity
             var asm = Assembly.GetExecutingAssembly();
-            Log.LogInfo("Build marker: v1.0.6-release");
+            Log.LogInfo("Build marker: v1.0.8-release");
             Log.LogInfo($"Assembly location: {asm.Location}");
             try { Log.LogInfo($"Assembly file time UTC: {File.GetLastWriteTimeUtc(asm.Location):yyyy-MM-dd HH:mm:ss}"); }
             catch { /* non-critical */ }
@@ -363,7 +363,7 @@ namespace LootPulse
         {
             var result    = new List<PhysGrabObject>();
             float sqRange = range * range;
-            foreach (var vo in FindObjectsOfType<ValuableObject>())
+            foreach (var vo in FindObjectsByType<ValuableObject>(FindObjectsSortMode.None))
             {
                 if (vo == null) continue;
                 if ((vo.transform.position - origin).sqrMagnitude > sqRange) continue;

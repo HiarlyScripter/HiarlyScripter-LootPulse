@@ -2,6 +2,21 @@
 
 ---
 
+## v1.0.8 — 2026-11-06
+**Compatibilidade:** R.E.P.O. build `26407089` (Unity 6000.3.17) · BepInEx `5.4.23.5`
+
+### Alterado
+- Revalidado contra o update do jogo de 06/11/2026: todas as APIs usadas (SemiFunc, ValuableObject.Discover, Map.AddValuable, PlayerAvatar, GameDirector.Update) estão inalteradas
+- Fallback de busca de valuables usa `FindObjectsByType` (sem warning de depreciação)
+- Sem mudanças de gameplay
+
+### Changed (EN)
+- Revalidated against the 2026-11-06 game update: all game APIs used are unchanged
+- Fallback valuable search now uses `FindObjectsByType` (no deprecation warning)
+- No gameplay changes
+
+---
+
 ## v1.0.7 — 2026-06-08
 **Compatibilidade:** R.E.P.O. v0.4.4.3 · BepInEx `5.4.23.5`
 

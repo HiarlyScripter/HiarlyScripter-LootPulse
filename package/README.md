@@ -87,6 +87,7 @@ Ao pressionar F dentro de uma run:
 
 | Versão | Data | Destaque |
 |---|---|---|
+| v1.0.8 | 2026-11-06 | Revalidado para o update do jogo (build 26407089); sem mudanças de gameplay |
 | v1.0.6 | 2026-06-04 | **Hotfix: loop de execução** — scan agora usa Harmony em `GameDirector.Update`; logs diagnósticos |
 | v1.0.5 | 2026-06-02 | Ícone atualizado |
 | v1.0.0 | 2026-05-24 | Release inicial |
@@ -186,6 +187,7 @@ When pressing F inside a run:
 
 | Version | Date | Highlight |
 |---|---|---|
+| v1.0.8 | 2026-11-06 | Revalidated for the game update (build 26407089); no gameplay changes |
 | v1.0.6 | 2026-06-04 | **Hotfix: execution loop** — scan now uses Harmony on `GameDirector.Update`; diagnostic logs |
 | v1.0.5 | 2026-06-02 | Updated icon |
 | v1.0.0 | 2026-05-24 | Initial release |
@@ -202,4 +204,4 @@ Ideas for future versions — not implemented yet, no timeline commitment:
 
 ---
 
-*Mod by **[HiarlyScripter](https://discord.com/users/hiarly_ferreira)** · Tested on R.E.P.O. v0.4.4.3 · BepInEx 5.4.23.5*
+*Mod by **[HiarlyScripter](https://discord.com/users/hiarly_ferreira)** · Tested on R.E.P.O. build 26407089 · BepInEx 5.4.23.5*
